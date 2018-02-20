@@ -9,8 +9,18 @@
 	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!-- Packages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.29.0/date_fns.min.js"></script>
+
 </head>
 <body>
+
+<!-- Time -->
+
+<script src="travelTime/timeNow.js"></script>
+
+<!-- Main -->
 
 <div data-role="footer" id="pageone">
   <div data-role="header">
@@ -30,6 +40,19 @@
 <iframe src="https://cdn.rawgit.com/hkwesttransport/hkwesttransport.github.io/6628b626/gmaps/gmaps_western.html" style="width: 90%; height: 340px" frameborder="0"></iframe>
 <img src="gmap-indication.png" style="width:320px;">
 <br>
+
+<!-- Travel Time -->
+  <div data-role="footer">
+    <div data-role="footer"><center>行車時間 | Travel Time</center></div>
+  </div>
+    <table style="width:100%">
+    <TABLE BGCOLOR = #FFFFFF BORDER = 1>
+    <tr><th colspan="2">更新時間 Update Time : <script>document.write(h);</script>:<script>document.write(pad2(m));</script></th></tr>
+    <tr><td><center><b>車程 Journey</b></center></td><td><center><b>分鐘 Minutes</b></center></td></tr>
+    <tr><td><center><b>水街往北角碼頭 (18X/A12)</b></center><center><b>Water St to North Point Ferry (18X/A12)</b></center></td><td><center><b><font size="7"><span id="updateTime_18X"></span></font></b></center></td></tr>
+    <tr><td><center><b>北街往油麻地東方街 (西旺線)</b></center><center><b>North St to Yau Ma Tei Tung Fong St (Mongkok van)</b></center></td><td><center><b><font size="7"><span id="updateTime_mk"></span></font></b></center></td></tr>
+
+    </table>
 
 <!-- TD Cameras -->
 
@@ -94,6 +117,12 @@
   <div data-role="footer">
     <h1>西區交通仝人祝各位出入平安<br>We wish you safe and pleasant trips</h1>
   </div>
+
+<!-- TravelTime Script -->
+
+    <script src="travelTime/travelTime_mk.js"></script>
+    <script src="travelTime/travelTime.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsf9SwS7g2hixt9QZidUFgoLFVfG3-OJo&callback=initMap" type="text/javascript"></script>
 
 </body>
 </html>
