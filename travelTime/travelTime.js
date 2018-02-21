@@ -6,9 +6,13 @@ var updateTimeElem_18X = document.getElementById(travelTimeId_18X);
 var travelTimeId_mk = "updateTime_mk";
 var updateTimeElem_mk = document.getElementById(travelTimeId_mk);
 
+// Elements for 5X
+var travelTimeId_5X = "updateTime_5X";
+var updateTimeElem_5X = document.getElementById(travelTimeId_5X);
+
 function initMap() {
 
-// Calculate Water St to North Point
+// Calculate Water St to North Point (18X)
 
   var directionsService_18X = new google.maps.DirectionsService();
   var request_18X = {
@@ -30,7 +34,7 @@ function initMap() {
     }
   });
 
-// Calculate North St to Yau Ma Tei
+// Calculate North St to Yau Ma Tei (MK Van)
 
   var directionsService_mk = new google.maps.DirectionsService();
   var request_mk = {
@@ -47,6 +51,30 @@ function initMap() {
       var travelTimeSeconds_mk = result.routes[0].legs[0].duration_in_traffic.value;
       var minutes_mk = Math.floor(travelTimeSeconds_mk / 60);
       updateTimeElem_mk.textContent = minutes_mk
+    } else {
+      console.error(status)
+    }
+  });
+  
+// Calculate Kwong Sang Hong Bldg to Kennedy Town (5X)
+
+  var directionsService_5X = new google.maps.DirectionsService();
+  var request_5X = {
+    origin: "22.2779839,114.1775731", // 298 Computer Zone
+    destination: "22.2850092,114.1318056", // Sai Cheung Street
+    travelMode: "DRIVING",
+    waypoints: [{location: "22.2795922,114.1618817", stopover: false}], // China Bank Tower
+    optimizeWaypoints: true,
+    drivingOptions: {
+      departureTime: currentDate,
+      trafficModel: "bestguess"
+    }
+  }
+  directionsService_5X.route(request_5X, function(result, status) {
+    if (status == 'OK') {
+      var travelTimeSeconds_5X = result.routes[0].legs[0].duration_in_traffic.value;
+      var minutes_5X = Math.floor(travelTimeSeconds_5X / 60);
+      updateTimeElem_5X.textContent = minutes_5X
     } else {
       console.error(status)
     }
