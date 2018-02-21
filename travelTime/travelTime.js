@@ -39,7 +39,7 @@ function initMap() {
   var directionsService_mk = new google.maps.DirectionsService();
   var request_mk = {
     origin: "22.2833195,114.1289208",
-    destination: "22.3131821,114.1713361",
+    destination: "22.3153212,114.173002",
     travelMode: "DRIVING",
     drivingOptions: {
       departureTime: currentDate,
