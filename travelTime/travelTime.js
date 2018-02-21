@@ -27,7 +27,7 @@ function initMap() {
   directionsService_18X.route(request_18X, function(result, status) {
     if (status == 'OK') {
       var travelTimeSeconds_18X = result.routes[0].legs[0].duration_in_traffic.value;
-      var minutes_18X = Math.floor(travelTimeSeconds_18X / 60);
+      var minutes_18X = Math.floor((travelTimeSeconds_18X / 60) + 3);
       updateTimeElem_18X.textContent = minutes_18X
     } else {
       console.error(status)
@@ -73,7 +73,7 @@ function initMap() {
   directionsService_5X.route(request_5X, function(result, status) {
     if (status == 'OK') {
       var travelTimeSeconds_5X = result.routes[0].legs[0].duration_in_traffic.value;
-      var minutes_5X = Math.floor(travelTimeSeconds_5X / 60);
+      var minutes_5X = Math.floor((travelTimeSeconds_5X / 60) + 4);
       updateTimeElem_5X.textContent = minutes_5X
     } else {
       console.error(status)
