@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>西環路路通 | Western District Traffic</title>
-	<link rel="icon" type="image/png" href="favicon.png">
+	<title>最新資訊 | Newest Updates</title>
+	<link rel="icon" type="image/svg" href="favicon.svg">
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
-	<meta http-equiv='refresh' content='120'>
 	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -23,115 +22,57 @@
 
 <!-- Packages -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.29.0/date_fns.min.js"></script>
+<script src="https://hkwesttransport.github.io/travelTime/timeNow.js"></script>
 
 </head>
 <body>
-
-<!-- Time -->
-
-<script src="travelTime/timeNow.js"></script>
-
-<!-- Main -->
-
 <div data-role="footer" id="pageone">
   <div data-role="header">
-    <p align="center">西環路路通 | Western District Traffic</p>
+    <p align="center">最新通告 | Newest Updates</p>
   </div>
 </div>
 
-<!-- 置頂按鈕 Top buttons -->
+<p><b><i><font size="4">現在時間 Time Now: <script>document.write(day);</script>/<script>document.write(month+1);</script>/<script>document.write(year);</script> <script>document.write(h);</script>:<script>document.write(pad2(m));</script></font></i></b></p>
 
-<table>
-    <tr>
-    <td><a href="schedules/list.html" target="_self"><img src="images/bustime_button.png" style="width:100%;"></td>
-    <td><a href="info/main.html" target="_self"><img src="images/info_button.png" style="width:100%;"></td>
-    </tr>
-</table>
-
-<p><b>Google Traffic Maps 路況地圖</b></p>
-<iframe src="https://cdn.rawgit.com/hkwesttransport/hkwesttransport.github.io/6628b626/gmaps/gmaps_western.html" style="width: 95%; height: 340px" frameborder="0"></iframe>
-<img src="gmap-indication.png" style="width:320px;">
-<br>
-
-<!-- Travel Time -->
-  <div data-role="footer">
-    <div data-role="footer"><center>行車時間 | Travel Time</center></div>
-  </div>
-    <table style="width:100%" border = 1>
-    <tr><th colspan="2">更新時間 Update Time : <script>document.write(h);</script>:<script>document.write(pad2(m));</script></th></tr>
-    <tr><td><center><b>車程 Journey</b></center></td><td><center><b>分鐘 Minutes</b></center></td></tr>
-    <tr><td><center><b>水街往北角碼頭 (18X/A12)</b></center><center><b>Water St to North Point Ferry (18X/A12)</b></center></td><td><center><b><font size="7"><span id="updateTime_18X"></span></font></b></center></td></tr>
-    <tr><td><center><b>北街往廣華醫院 (西旺線)</b></center><center><b>North St to Kwong Wah Hospital (Mongkok van)</b></center></td><td><center><b><font size="7"><span id="updateTime_mk"></span></font></b></center></td></tr>
-    <tr><td><center><b>廣生行大廈往西祥街 (5X)</b></center><center><b>Kwong Sang Hong Bldg to Sai Cheung St (5X)</b></center></td><td><center><b><font size="7"><span id="updateTime_5X"></span></font></b></center></td></tr>
-    </table>
-
-<!-- TD Cameras -->
-
-  <div data-role="footer">
-    <div data-role="footer"><center>交通情況快拍 | Instant Traffic Snapshots</center></div>
-  </div>
   <div data-role="main" class="ui-content">
     <div data-role="collapsible" data-mini="true">
-      <h1>林士街天橋 Rumsey St Flyover</h1>
-      <p><img src="http://tdcctv.data.one.gov.hk/H110F.JPG" style="width:300px;"></p>
+      <h1>將本頁加入手機主畫面<br>Bookmark to mobile desktop</h1>
+      <p><iframe src="promo.html" style="width: 90%" frameborder="0"></iframe></p>
     </div>
+
     <div data-role="collapsible" data-mini="true">
-      <h1>夏愨道及告士打道<br>Harcourt Rd / Gloucester Rd</h1>
-	<table style="width:100%" border = 1>
-		<tr><td>
-		<p>夏愨道 Harcourt Road</p>
-		<img src="http://tdcctv.data.one.gov.hk/H214F.JPG" style="width:300px;">
-		</td></tr><tr><td>
-		<p>告士打道 Gloucester Road</p>
-		<img src="http://tdcctv.data.one.gov.hk/H222F.JPG" style="width:300px;">
-		</td></tr>
-	</table>
+      <h1>小巴 13 減班<br>Minibus 13 headway reduction</h1>
+      <p><iframe src="2018/minibus13.html" style="width: 90%" frameborder="0"></iframe></p>
     </div>
+
     <div data-role="collapsible" data-mini="true">
-      <h1>紅隧九龍入口<br>CHT Kowloon Entrance</h1>
-      <p><img src="http://tdcctv.data.one.gov.hk/K107F.JPG" style="width:300px;"></p>
+      <h1>深宵機場巴士 NA10 NA12 復活節長假服務安排<br>Night Airport bus NA10 & NA12 to provide service<br>during Easter Holiday period</h1>
+      <p><iframe src="2018/NA_2018easter.html" style="width: 90%" frameborder="0"></iframe></p>
     </div>
+
     <div data-role="collapsible" data-mini="true">
-      <h1>佐敦道 Jordan Road</h1>
-      <p><img src="http://tdcctv.data.one.gov.hk/K108F.JPG" style="width:300px;"></p>
+      <h1>18P、18X 及 904 線更改落客站<br>18P/18X/904 relocation of alighting stop</h1>
+      <p><iframe src="2018/BEB_alightingPoint.html" style="width: 90%" frameborder="0"></iframe></p>
     </div>
+
     <div data-role="collapsible" data-mini="true">
-      <h1>銅鑼灣怡和街<br>Causeway Bay (Yee Wo St)</h1>
-      <p><img src="http://tdcctv.data.one.gov.hk/H203F.JPG" style="width:300px;"></p>
+      <h1>提供抵站時間查詢服務的路線<br>List of routes with ETA service</h1>
+      <p><iframe src="2018/ETAList.html" style="width: 90%" frameborder="0"></iframe></p>
     </div>
+
     <div data-role="collapsible" data-mini="true">
-      <h1>旺角彌敦道近聯合廣場<br>Mong Kok Nathan Rd Near Allied Plaza</h1>
-      <p><img src="http://tdcctv.data.one.gov.hk/K205F.JPG" style="width:300px;"></p>
+      <h1>聯營過海隧道線九巴班次列表<br>List of KMB departures for jointly operated routes</h1>
+      <p><iframe src="KMBTime/KMBTime.html" style="width: 90%" frameborder="0"></iframe></p>
     </div>
+
     <div data-role="collapsible" data-mini="true">
-      <h1>西隧港島入口 WHT Island Entrance</h1>
-      <p><img src="http://tdcctv.data.one.gov.hk/H702F.JPG" style="width:300px;"></p>
-    </div>
-    <div data-role="collapsible" data-mini="true">
-      <h1>薄扶林道近士美菲路<br>Pokfulam Rd near Smithfield</h1>
-      <p><img src="http://tdcctv.data.one.gov.hk/H132F2.JPG" style="width:300px;"></p>
+      <h1>23B線增設與25線免費轉乘優惠<br>New free interchange between 23B & 25</h1>
+      <p><iframe src="2018/23B_BBI_25.html" style="width: 90%" frameborder="0"></iframe></p>
     </div>
   </div>
-
-<!-- Traffic News -->
-
-  <div data-role="footer"><center>交通消息 | Traffic News</center></div>
-
-<table>
-    <tr>
-    <td><a href="http://www.881903.com/page/zh-tw/rs_newslist.aspx?sid=1600"><img src="images/881903.png" style="width:100%;"></td>
-    <td><a href="http://rthk.hk/trafficnews/"><img src="images/RTHK.png" style="width:100%;"></td>
-    </tr>
-</table>
-
-  <div data-role="footer">
-    <h1>西區交通仝人祝各位出入平安<br>We wish you safe and pleasant trips</h1>
-  </div>
-
-<!-- TravelTime Script -->
-
-    <script src="travelTime/travelTime.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsf9SwS7g2hixt9QZidUFgoLFVfG3-OJo&callback=initMap" type="text/javascript"></script>
+  <table>
+	<td><a href="https://hkwesttransport.github.io/" target="_self"><img src="https://hkwesttransport.github.io/images/return_button.png" style="width:50%;"></td>
+  </table>
 
 </body>
 </html>
