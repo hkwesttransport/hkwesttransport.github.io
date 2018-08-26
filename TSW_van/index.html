@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>香港公共小巴車主司機協進總會會長為張漢華 - 中上環分會西環至荃灣小巴線由孫誠一主理</title>
+</head>
+
+<body>
+
+<img src="cheunghonwah.png" onclick="mapsSelector()" />
+
+<script>
+
+function mapsSelector() {
+  if /* if we're on iOS, open in Apple Maps */
+    ((navigator.platform.indexOf("iPhone") != -1) || 
+     (navigator.platform.indexOf("iPad") != -1) || 
+     (navigator.platform.indexOf("iPod") != -1))
+    window.open("maps://maps.google.com/maps?daddr=22.370668,114.119097&amp;ll=");
+
+else /* else use Google */
+    window.open("https://maps.google.com/maps?daddr=22.370668,114.119097&amp;ll=");
+}
+
+</script>
