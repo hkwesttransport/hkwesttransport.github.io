@@ -6,12 +6,19 @@
 </head>
 
 <body>
-
-<img src="TSW.png" onclick="mapsSelector1()" /><br>
-<img src="KWC.png" onclick="mapsSelector2()" />
+  <u><b><i>往西環 To Sai Wan</i></b></u><br>
+  <img src="TSW.png" onclick="mapsSelector1()" /><br>
+  <img src="KWC.png" onclick="mapsSelector2()" />
+  <hr>
+  <u><b><i>往荃灣 To Tsuen Wan</i></b></u><br>
+  <img src="SUS.png" onclick="mapsSelector3()" /><br>
+  <img src="CES.png" onclick="mapsSelector4()" /><br>
+  <img src="VAN.png" onclick="mapsSelector1()" /><br>
+  <hr>
+  <u><b><i>此車隊已參與公共交通費用補貼計劃<br>Public Transport Fare Subsidy Scheme applicable on this fleet</i></b></u><br>
+  
 
 <script>
-
 function mapsSelector1() {
   if /* if we're on iOS, open in Apple Maps */
     ((navigator.platform.indexOf("iPhone") != -1) || 
@@ -32,6 +39,39 @@ function mapsSelector2() {
 
 else /* else use Google */
     window.open("https://maps.google.com/maps?daddr=22.358434,114.127923&amp;ll=");
+}
+  
+function mapsSelector3() {
+  if /* if we're on iOS, open in Apple Maps */
+    ((navigator.platform.indexOf("iPhone") != -1) || 
+     (navigator.platform.indexOf("iPad") != -1) || 
+     (navigator.platform.indexOf("iPod") != -1))
+    window.open("maps://maps.google.com/maps?daddr=22.2880839,114.1458994&amp;ll=");
+
+else /* else use Google */
+    window.open("https://maps.google.com/maps?daddr=22.2880839,114.1458994&amp;ll=");
+}
+  
+function mapsSelector4() {
+  if /* if we're on iOS, open in Apple Maps */
+    ((navigator.platform.indexOf("iPhone") != -1) || 
+     (navigator.platform.indexOf("iPad") != -1) || 
+     (navigator.platform.indexOf("iPod") != -1))
+    window.open("maps://maps.google.com/maps?daddr=22.2878838,114.1417625&amp;ll=");
+
+else /* else use Google */
+    window.open("https://maps.google.com/maps?daddr=22.2878838,114.1417625&amp;ll=");
+}
+
+function mapsSelector5() {
+  if /* if we're on iOS, open in Apple Maps */
+    ((navigator.platform.indexOf("iPhone") != -1) || 
+     (navigator.platform.indexOf("iPad") != -1) || 
+     (navigator.platform.indexOf("iPod") != -1))
+    window.open("maps://maps.google.com/maps?daddr=22.2869944,114.1372844&amp;ll=");
+
+else /* else use Google */
+    window.open("https://maps.google.com/maps?daddr=22.2869944,114.1372844&amp;ll=");
 }
 
 </script>
