@@ -12,12 +12,12 @@ var updateTimeElem_5X = document.getElementById(travelTimeId_5X);
 
 function initMap() {
 
-// Calculate Water St to North Point (18X)
+// Calculate Water St to Gloucester Rd (18X)
 
   var directionsService_18X = new google.maps.DirectionsService();
   var request_18X = {
     origin: "22.2874255,114.1383956",
-    destination: "22.2925641,114.2008828",
+    destination: "22.279608, 114.169541",
     travelMode: "DRIVING",
     drivingOptions: {
       departureTime: currentDate,
