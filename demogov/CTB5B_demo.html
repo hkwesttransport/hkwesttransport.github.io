@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+<script>
+function readRoutesFile(file){
+	var xhr, xhr2, i, j, k, lines, lines2, text, text2, items, items2, id2;
+	if(window.XMLHttpRequest){
+		// IE7+, Firefox, Chrome, Opera, Safari
+		xhr = new XMLHttpRequest();
+		xhr2 = new XMLHttpRequest();
+	}else{
+		// IE5, IE6  - next line supports these dinosaurs
+		xhr = new ActiveXObject("Microsoft.XMLHTTP");
+		xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhr.onreadystatechange = function(){
+		xhr2.onreadystatechange = function(){
+			if(xhr.readyState == 4 && xhr.status == 200){
+				if(xhr2.readyState == 4 && xhr2.status == 200){
+					text = xhr.responseText;
+					lines = text.split("\n");
+					text2 = xhr2.responseText;
+					lines2 = text2.split("\n");
+					document.write("城巴 5B 線" + "<br><br>");
+					/*for (i=0;i<lines.length;i++) {
+						items = lines[i].split(",");
+						if (items[1] == "CTB") {
+							document.write(items[2] + " " + items[3] + "<br>");
+						}
+					}*/
+					for (i=0;i<lines2.length;i++) {
+						items2 = lines2[i].split(",");
+						for (j=0;j<items2.length;j++) {
+							id2 = items2[j].split("-");
+							if ((id2[0] == "1557")||(id2[0] == "8336")||(id2[0] == "8337")||(id2[0] == "8338")||(id2[0] == "8339")) {
+								document.write(items2[0] + "  |  " + items2[1] + " - " + items2[2] + " | " + parseInt(items2[3])/60 + "<br>");
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	xhr.open('GET', 'https://static.data.gov.hk/td/pt-headway-tc/routes.txt', true);
+	xhr2.open('GET', 'https://static.data.gov.hk/td/pt-headway-tc/frequencies.txt', true);
+	xhr.send();
+	xhr2.send();
+}
+
+// Call function
+readRoutesFile();
+
+</script>
+</body>
+</html>
