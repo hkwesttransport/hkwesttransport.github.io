@@ -1,4 +1,8 @@
-// Elements for 18X
+// Elements for 18X (CWBypass)
+var travelTimeId_18X = "updateTime_18X";
+var updateTimeElem_18X = document.getElementById(travelTimeId_18X);
+
+// Elements for A12 (Gloucester Rd)
 var travelTimeId_A12 = "updateTime_A12";
 var updateTimeElem_A12 = document.getElementById(travelTimeId_A12);
 
@@ -11,6 +15,28 @@ var travelTimeId_5X = "updateTime_5X";
 var updateTimeElem_5X = document.getElementById(travelTimeId_5X);
 
 function initMap() {
+
+// Calculate Water St to Gloucester Rd (18X)
+
+  var directionsService_18X = new google.maps.DirectionsService();
+  var request_18X = {
+    origin: "22.28811512362805, 114.1504301107765",
+    destination: "22.292532424363042, 114.20083417391065",
+    travelMode: "DRIVING",
+    drivingOptions: {
+      departureTime: currentDate,
+      trafficModel: "bestguess"
+    }
+  }
+  directionsService_18X.route(request_18X, function(result, status) {
+    if (status == 'OK') {
+      var travelTimeSeconds_18X = result.routes[0].legs[0].duration_in_traffic.value;
+      var minutes_18X = Math.floor((travelTimeSeconds_18X / 60) + 1);
+      updateTimeElem_18X.textContent = minutes_18X
+    } else {
+      console.error(status)
+    }
+  });
 
 // Calculate Water St to Gloucester Rd (A12)
 
