@@ -1,6 +1,6 @@
 // Elements for 18X
-var travelTimeId_18X = "updateTime_18X";
-var updateTimeElem_18X = document.getElementById(travelTimeId_18X);
+var travelTimeId_A12 = "updateTime_A12";
+var updateTimeElem_A12 = document.getElementById(travelTimeId_A12);
 
 // Elements for Mongkok Van
 var travelTimeId_mk = "updateTime_mk";
@@ -12,10 +12,10 @@ var updateTimeElem_5X = document.getElementById(travelTimeId_5X);
 
 function initMap() {
 
-// Calculate Water St to Gloucester Rd (18X)
+// Calculate Water St to Gloucester Rd (A12)
 
-  var directionsService_18X = new google.maps.DirectionsService();
-  var request_18X = {
+  var directionsService_A12 = new google.maps.DirectionsService();
+  var request_A12 = {
     origin: "22.2874255,114.1383956",
     destination: "22.279608, 114.169541",
     travelMode: "DRIVING",
@@ -24,11 +24,11 @@ function initMap() {
       trafficModel: "bestguess"
     }
   }
-  directionsService_18X.route(request_18X, function(result, status) {
+  directionsService_A12.route(request_A12, function(result, status) {
     if (status == 'OK') {
-      var travelTimeSeconds_18X = result.routes[0].legs[0].duration_in_traffic.value;
-      var minutes_18X = Math.floor((travelTimeSeconds_18X / 60) + 2);
-      updateTimeElem_18X.textContent = minutes_18X
+      var travelTimeSeconds_A12 = result.routes[0].legs[0].duration_in_traffic.value;
+      var minutes_A12 = Math.floor((travelTimeSeconds_A12 / 60) + 2);
+      updateTimeElem_A12.textContent = minutes_A12
     } else {
       console.error(status)
     }
