@@ -1,0 +1,6 @@
+Redirect 301 / https://docs.google.com/document/d/1S689N-jkuwYL22aC7UY-6FxLZSePnXXV_RJqaDEHVsU
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^example.com
+RewriteRule (.*) http://example.com/$1 [R=301,L]
