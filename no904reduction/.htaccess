@@ -1,4 +1,4 @@
-Redirect 301 / https://docs.google.com/document/d/1S689N-jkuwYL22aC7UY-6FxLZSePnXXV_RJqaDEHVsU
+Redirect 301 /index.html https://docs.google.com/document/d/1S689N-jkuwYL22aC7UY-6FxLZSePnXXV_RJqaDEHVsU
 Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{HTTP_HOST} .
